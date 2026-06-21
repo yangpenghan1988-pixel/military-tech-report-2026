@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中國軍工科技重大突破 2026 | China's Major Military Tech Breakthroughs</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --gold: #FFDE00;
+    --dark: #1a1a2e;
+    --darker: #16213e;
+    --accent: #e94560;
+    --card-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --card-hover: 0 8px 32px rgba(0,0,0,0.14);
+    --text: #2d2d2d;
+    --text-light: #666;
+    --bg: #f5f5f7;
+    --white: #ffffff;
+    --border: #e8e8ed;
+    --green: #10b981;
+    --blue: #3b82f6;
+    --orange: #f59e0b;
+    --purple: #8b5cf6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 50%, #0f3460 100%);
+    color: #fff;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(200,16,46,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(233,69,96,0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,16,46,0.2);
+    border: 1px solid rgba(200,16,46,0.4);
+    color: #ff6b7a;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  .hero-badge::before { content: '🔴'; }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    background: linear-gradient(90deg, #fff, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h1.en {
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 400;
+    background: rgba(255,255,255,0.7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 24px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 32px;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .video-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .stat-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .stat-chip .num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--red);
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-header h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .section-header h2 .en-sub {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+  .section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    border-radius: 2px;
+    margin: 12px auto 0;
+  }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  /* ── BREAKTHROUGH CARD ── */
+  .bt-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .bt-card:hover {
+    box-shadow: var(--card-hover);
+    transform: translateY(-4px);
+  }
+  .bt-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+    background: #eee;
+  }
+  .bt-card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .bt-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .bt-card-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--red), var(--accent));
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .bt-card-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .tag-fighter { background: #3b82f6; }
+  .tag-carrier { background: #0ea5e9; }
+  .tag-navy { background: #6366f1; }
+  .tag-missile { background: #ef4444; }
+  .tag-ai { background: #8b5cf6; }
+  .tag-laser { background: #f59e0b; }
+  .tag-gen6 { background: #ec4899; }
+  .tag-robot { background: #10b981; }
+
+  .bt-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+  .bt-card h3 .en {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-light);
+    display: block;
+    margin-top: 2px;
+  }
+  .bt-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 10px;
+    line-height: 1.8;
+    flex: 1;
+  }
+  .bt-card p strong { color: var(--text); }
+
+  .bt-card-specs {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .spec-pill {
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 8px;
+    color: var(--text);
+  }
+  .spec-pill.highlight {
+    background: rgba(200,16,46,0.08);
+    border-color: rgba(200,16,46,0.2);
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  /* ── WIDE CARD (featured) ── */
+  .bt-card.featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .bt-card.featured .bt-card-img {
+    width: 45%;
+    min-width: 300px;
+    height: auto;
+    min-height: 280px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+  .bt-card.featured .bt-card-body { padding: 32px; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis {
+    margin-bottom: 60px;
+  }
+  .perspective-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .persp-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+  }
+  .persp-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .persp-card h4 .icon { font-size: 24px; }
+  .persp-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .persp-card li {
+    font-size: 14px;
+    color: var(--text-light);
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+  }
+  .persp-card li::before {
+    content: '›';
+    position: absolute;
+    left: 4px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ── SOURCE TABLE ── */
+  .source-section { margin-bottom: 60px; }
+  .source-table-wrap {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    overflow-x: auto;
+  }
+  .source-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .source-table thead {
+    background: var(--dark);
+    color: #fff;
+  }
+  .source-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .source-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .source-table tr:last-child td { border-bottom: none; }
+  .source-table tr:hover td { background: rgba(200,16,46,0.03); }
+  .cred {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .cred-a { background: #d1fae5; color: #065f46; }
+  .cred-b { background: #dbeafe; color: #1e40af; }
+  .cred-c { background: #fef3c7; color: #92400e; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin-bottom: 60px; }
+  .tl-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .tl-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: -4px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--red), var(--border));
+  }
+  .tl-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--red);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .tl-content {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    flex: 1;
+    margin-bottom: 12px;
+    box-shadow: var(--card-shadow);
+  }
+  .tl-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .tl-content p { font-size: 13px; color: var(--text-light); }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 2;
+  }
+  .footer a { color: #ff6b7a; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .disclaimer {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-top: 16px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .bt-card.featured { flex-direction: column; }
+    .bt-card.featured .bt-card-img {
+      width: 100%;
+      min-width: unset;
+      height: 200px;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { padding: 32px 16px 28px; }
+    .content { padding: 24px 16px 40px; }
+    .stats-inner { gap: 8px; }
+    .stat-chip { font-size: 12px; padding: 6px 12px; }
+    .stat-chip .num { font-size: 15px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .bt-card, .persp-card, .tl-item {
+    animation: fadeInUp 0.5s ease both;
+  }
+  .bt-card:nth-child(2), .persp-card:nth-child(2), .tl-item:nth-child(2) { animation-delay: 0.05s; }
+  .bt-card:nth-child(3), .persp-card:nth-child(3), .tl-item:nth-child(3) { animation-delay: 0.1s; }
+  .bt-card:nth-child(4) { animation-delay: 0.15s; }
+  .bt-card:nth-child(5) { animation-delay: 0.2s; }
+  .bt-card:nth-child(6) { animation-delay: 0.25s; }
+  .bt-card:nth-child(7) { animation-delay: 0.3s; }
+  .bt-card:nth-child(8) { animation-delay: 0.35s; }
+  .bt-card:nth-child(9) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">2026 年度軍事科技盤點 ANNUAL MILITARY TECH REVIEW</div>
+    <h1>中國軍工科技重大突破</h1>
+    <h1 class="en">China's Major Military Technology Breakthroughs — 2026</h1>
+    <div class="hero-meta">
+      <span>📺 頻道：觀點 / Guandian</span>
+      <span>📅 2026-06-19</span>
+      <span>⏱ 龍行天下 Pt.4</span>
+      <span>📝 9大領域突破</span>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/f5loeJ5ZJnw" title="觀點│龍行天下 Pt.4 中國領先確定：軍工科技幾個重大突破" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ STATS BAR ═══════════════ -->
+<nav class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-chip"><span class="num">9</span> 突破領域</div>
+    <div class="stat-chip"><span class="num">3</span> 艦載型號服役航母</div>
+    <div class="stat-chip"><span class="num">3</span> 條電磁彈射器</div>
+    <div class="stat-chip"><span class="num">10+</span> 055型驅逐艦</div>
+    <div class="stat-chip"><span class="num">Mach 8.6</span> 高超音速</div>
+    <div class="stat-chip"><span class="num">6.6ms</span> AI決策</div>
+    <div class="stat-chip"><span class="num">50mm</span> 激光穿透鋼板</div>
+  </div>
+</nav>
+
+<!-- ═══════════════ CONTENT ═══════════════ -->
+<main class="content">
+
+  <!-- ─── BREAKTHROUGHS ─── -->
+  <div class="section-header">
+    <h2>九大突破領域 <span class="en-sub">Nine Major Breakthrough Areas</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card-grid">
+
+    <!-- #1 J-35 FEATURED -->
+    <article class="bt-card featured">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/J-35_Navy.jpg/800px-J-35_Navy.jpg" alt="J-35 隱身戰鬥機">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">1</div>
+          <span class="bt-card-tag tag-fighter">第五代戰機 5th Gen</span>
+        </div>
+        <h3>殲-35 隱身艦載戰鬥機 <span class="en">J-35 Carrier-Based Stealth Fighter</span></h3>
+        <p>
+          由瀋陽飛機工業集團研製的第五代艦載隱身戰鬥機。<strong>2026年5月央視確認</strong>，J-35已成功適配滑躍起飛，現已部署於<strong>全部三艘航空母艦</strong>（遼寧號、山東號、福建號）。J-35是全球首款<strong>同時完成電磁彈射起飛與攔阻著艦</strong>的隱身戰鬥機。
+        </p>
+        <p style="margin-top:8px">
+          陸基型 <strong>J-35A「雲龍」</strong> 及出口型 <strong>J-35AE</strong> 於2026年5月1日亮相。可攜帶 <strong>YJ-15高超音速反艦飛彈（5馬赫）</strong>，具備強大的制海打擊能力。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">三航母全適配</span>
+          <span class="spec-pill">電磁彈射 + 滑躍雙模式</span>
+          <span class="spec-pill">雙發中推</span>
+          <span class="spec-pill">YJ-15 高超音速反艦</span>
+          <span class="spec-pill">AESA雷達</span>
+          <span class="spec-pill">J-35AE 出口型</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #2 福建艦 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Type_003_aircraft_carrier_20250420.jpg/800px-Type_003_aircraft_carrier_20250420.jpg" alt="福建號航空母艦">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">2</div>
+          <span class="bt-card-tag tag-carrier">航空母艦 Carrier</span>
+        </div>
+        <h3>福建號電磁彈射航母 <span class="en">Fujian (Type 003) EMALS Carrier</span></h3>
+        <p>
+          中國首艘配備<strong>電磁彈射系統（EMALS）</strong>的航空母艦，<strong>習近平親自拍板</strong>決定採用電磁彈射方案。配備<strong>3條電磁彈射器</strong>，可大幅提升艦載機出動效率與载荷。2026年4月官方媒體報導已接近<strong>全面戰鬥值班狀態</strong>。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">3條電磁彈射器</span>
+          <span class="spec-pill">8萬噸級</span>
+          <span class="spec-pill">近平拍板</span>
+          <span class="spec-pill">常規動力</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #3 076型 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Type_003_aircraft_carrier_20250420.jpg/800px-Type_003_aircraft_carrier_20250420.jpg" alt="076型兩棲攻擊艦示意">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">3</div>
+          <span class="bt-card-tag tag-navy">兩棲攻擊艦 LHD</span>
+        </div>
+        <h3>076型四川艦 <span class="en">Type 076 Sichuan Amphibious Assault Ship</span></h3>
+        <p>
+          <strong>全球首艘配備電磁彈射器的兩棲攻擊艦</strong>，排水量逾4萬噸，彈射器長度達<strong>130米</strong>。2026年6月飛行甲板標線完工，即將服役。設計理念為<strong>有人-無人協同作戰</strong>（manned-unmanned teaming），可彈射固定翼無人機，大幅擴展兩棲作戰半徑。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">全球首創電磁彈射LHD</span>
+          <span class="spec-pill">4萬+噸</span>
+          <span class="spec-pill">130m彈射軌</span>
+          <span class="spec-pill">有人-無人協同</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #4 055型 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/20220723_%E5%8D%97%E6%98%8C%E8%88%B0.jpg/800px-20220723_%E5%8D%97%E6%98%8C%E8%88%B0.jpg" alt="055型南昌艦驅逐艦">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">4</div>
+          <span class="bt-card-tag tag-navy">驅逐艦 Destroyer</span>
+        </div>
+        <h3>055型萬噸驅逐艦第二批 <span class="en">Type 055 Destroyer — Batch 2</span></h3>
+        <p>
+          055型驅逐艦第二批<strong>已建造10+艘</strong>，中國海軍<strong>三大艦隊均已配備055</strong>。作為全球最大型驅逐艦之一，配備<strong>雙波段雷達、112單元VLS</strong>，具備強大的區域防空與反艦能力。第二批改進型提升了隱身性能與電子戰系統。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">10+艘建造</span>
+          <span class="spec-pill">萬噸級</span>
+          <span class="spec-pill">112單元VLS</span>
+          <span class="spec-pill">三艦隊全配備</span>
+          <span class="spec-pill">雙波段雷達</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #5 高超音速 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Dongfeng-17_ballistic_missile_20191001.jpg/800px-Dongfeng-17_ballistic_missile_20191001.jpg" alt="東風系列高超音速飛彈">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">5</div>
+          <span class="bt-card-tag tag-missile">高超音速 Hypersonic</span>
+        </div>
+        <h3>東風-27A 高超音速武器 <span class="en">DF-27A Hypersonic Missile</span></h3>
+        <p>
+          東風-27A具備<strong>8.6馬赫飛行速度</strong>、<strong>8000公里射程</strong>，被稱為「航母殺手」。結合高超音速滑翔體（HGV）技術，可在飛行中段進行軌跡機動，現有防空系統極難攔截。標誌著中國在高超音速武器領域已形成<strong>多型號、多梯次</strong>的完整體系。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">Mach 8.6</span>
+          <span class="spec-pill highlight">8,000 km 射程</span>
+          <span class="spec-pill">HGV滑翔體</span>
+          <span class="spec-pill">航母殺手</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #6 AI -->
+    <article class="bt-card">
+      <div class="bt-card-body" style="background: linear-gradient(135deg, #1a1a2e, #2d2b55); color: #fff;">
+        <div class="bt-card-top">
+          <div class="bt-card-num" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">6</div>
+          <span class="bt-card-tag tag-ai">AI 智能作戰</span>
+        </div>
+        <h3 style="color:#fff;">AI無人機群作戰 <span class="en" style="color:rgba(255,255,255,0.6);">AI Drone Swarm Warfare</span></h3>
+        <p style="color:rgba(255,255,255,0.75);">
+          中國已開發出<strong>6.6毫秒級決策算法</strong>，在模擬對抗中達到<strong>100%擊殺率</strong>。更具革命性的是，系統可在<strong>人類指揮中斷後自主運作</strong>，繼續執行任務直到完成。結合蜂群協同技術，數百架無人機可自主組網、分配目標、協同攻擊。
+        </p>
+        <div class="bt-card-specs" style="margin-top:16px;">
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">⚡ 6.6ms 決策</span>
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">100% 擊殺率</span>
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">自主運作</span>
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">蜂群協同</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #7 激光 -->
+    <article class="bt-card">
+      <div class="bt-card-body" style="background: linear-gradient(135deg, #1a1a2e, #4a3020); color: #fff;">
+        <div class="bt-card-top">
+          <div class="bt-card-num" style="background: linear-gradient(135deg, #f59e0b, #d97706);">7</div>
+          <span class="bt-card-tag tag-laser">激光武器 Laser</span>
+        </div>
+        <h3 style="color:#fff;">燎原-1 激光武器系統 <span class="en" style="color:rgba(255,255,255,0.6);">LY-1 "Liaoyuan-1" Laser Weapon</span></h3>
+        <p style="color:rgba(255,255,255,0.75);">
+          被法國海軍防務刊物評為<strong>「世界最強激光武器」</strong>。有效射程<strong>10公里</strong>，可<strong>穿透50毫米鋼板</strong>，<strong>5秒內</strong>完成目標摧毀。可部署於艦艇、車載及陣地，用於防空反導、反無人機及精確打擊，顛覆傳統近防體系。
+        </p>
+        <div class="bt-card-specs" style="margin-top:16px;">
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">🔦 10km 射程</span>
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">50mm 鋼板穿透</span>
+          <span class="spec-pill" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">5秒摧毀</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #8 六代機 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/J-35_Navy.jpg/800px-J-35_Navy.jpg" alt="第六代戰鬥機概念">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">8</div>
+          <span class="bt-card-tag tag-gen6">第六代 6th Gen</span>
+        </div>
+        <h3>第六代戰鬥機 J-36 / J-50 <span class="en">6th-Gen Fighters (J-36, J-50)</span></h3>
+        <p>
+          成飛（J-36）與瀋飛（J-50）兩條技術路線並行發展，原型機已進入試飛階段。預計將具備<strong>超音速巡航、全域感知、AI輔助決策、無人僚機控制</strong>等能力，直接競爭美國 <strong>NGAD/F-47</strong> 計劃。這標誌著中美六代機競賽進入白熱化。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill highlight">原型機試飛中</span>
+          <span class="spec-pill">成飛 J-36</span>
+          <span class="spec-pill">瀋飛 J-50</span>
+          <span class="spec-pill">AI輔助決策</span>
+          <span class="spec-pill">無人僚機</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- #9 機器人 -->
+    <article class="bt-card">
+      <img class="bt-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/20220723_%E5%8D%97%E6%98%8C%E8%88%B0.jpg/800px-20220723_%E5%8D%97%E6%98%8C%E8%88%B0.jpg" alt="軍用機器人概念示意">
+      <div class="bt-card-body">
+        <div class="bt-card-top">
+          <div class="bt-card-num">9</div>
+          <span class="bt-card-tag tag-robot">機器人 Robot</span>
+        </div>
+        <h3>軍用人形 & 四足機器人 <span class="en">Military Humanoid & Quadruped Robots</span></h3>
+        <p>
+          中國已開發<strong>人形機器人</strong>和<strong>四足機器狗</strong>用於地面作戰場景。人形機器人可執行哨戒、搬運、排爆等任務；四足機器人配備武器模組後可進行偵察與火力支援。結合AI自主決策能力，未來可能改變陸戰形態。
+        </p>
+        <div class="bt-card-specs">
+          <span class="spec-pill">人形機器人</span>
+          <span class="spec-pill">四足機器狗</span>
+          <span class="spec-pill">哨戒/排爆</span>
+          <span class="spec-pill">AI自主決策</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- end card-grid -->
+
+  <!-- ─── TIMELINE ─── -->
+  <div class="section-header">
+    <h2>關鍵時間線 <span class="en-sub">Key Timeline</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">5.1</div>
+      <div class="tl-content">
+        <h4>2026-05-01 — J-35A / J-35AE 亮相</h4>
+        <p>陸基型「雲龍」與出口型 J-35AE 在五一國際勞動節活動中公開展示</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">5</div>
+      <div class="tl-content">
+        <h4>2026年5月 — CCTV 確認 J-35 跳板起飛</h4>
+        <p>央視報導確認 J-35 成功完成滑躍起飛適配測試，具備三航母部署能力</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-content">
+        <h4>2026年4月 — 福建艦接近戰鬥值班</h4>
+        <p>官方媒體報導福建號航空母艦已接近全面戰鬥值班狀態</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">6</div>
+      <div class="tl-content">
+        <h4>2026年6月 — 076型四川艦甲板標線完工</h4>
+        <p>全球首艘電磁彈射兩棲攻擊艦飛行甲板標線完工，即將交付服役</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">→</div>
+      <div class="tl-content">
+        <h4>持續進行 — 六代機原型試飛</h4>
+        <p>J-36 與 J-50 原型機持續試飛測試，與美國 F-47 展開六代機競賽</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MULTI-PERSPECTIVE ANALYSIS ─── -->
+  <div class="section-header">
+    <h2>多角度分析 <span class="en-sub">Multi-Perspective Analysis</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="analysis">
+    <div class="perspective-grid">
+
+      <div class="persp-card">
+        <h4><span class="icon">🇨🇳</span> 中國官方視角 <span style="font-weight:400;font-size:13px;color:#999;">China's Official Perspective</span></h4>
+        <ul>
+          <li>強調「正當國防建設」，軍事現代化是和平發展的保障</li>
+          <li>J-35三航母部署標誌「遠海防禦能力質的飛躍」</li>
+          <li>電磁彈射技術為自主研發，不依賴外國技術</li>
+          <li>AI與無人系統是「新質戰鬥力」的重要組成</li>
+          <li>低調展示、穩步推進的資訊發布策略</li>
+        </ul>
+      </div>
+
+      <div class="persp-card">
+        <h4><span class="icon">🇺🇸</span> 美國/西方視角 <span style="font-weight:400;font-size:13px;color:#999;">U.S. / Western Perspective</span></h4>
+        <ul>
+          <li>五角大廈將中國軍力增長視為「步調挑戰」（pacing threat）</li>
+          <li>J-35量產意味太平洋艦載機均勢正在改變</li>
+          <li>電磁彈射技術追趕速度超過預期（福特級EMALS故障頻傳）</li>
+          <li>AI蜂群技術可能在台海衝突中形成「飽和攻擊」優勢</li>
+          <li>高超音速武器對現有反導體系構成「不可攔截」威脅</li>
+        </ul>
+      </div>
+
+      <div class="persp-card">
+        <h4><span class="icon">🌏</span> 印太區域視角 <span style="font-weight:400;font-size:13px;color:#999;">Indo-Pacific Regional Perspective</span></h4>
+        <ul>
+          <li>日本、韓國關注076型對兩棲作戰能力的影響</li>
+          <li>台灣方面：J-35部署意味制空權壓力倍增</li>
+          <li>東南亞國家加速軍購，南海安全格局重估</li>
+          <li>印度關注高超音速武器對印軍部署的覆蓋</li>
+          <li>澳洲加強與美軍協同，關注AI軍事倫理問題</li>
+        </ul>
+      </div>
+
+      <div class="persp-card">
+        <h4><span class="icon">📊</span> 技術分析 <span style="font-weight:400;font-size:13px;color:#999;">Technical Assessment</span></li>
+        </h4>
+        <ul>
+          <li>電磁彈射：中國從無到有僅用約10年，技術迭代速度驚人</li>
+          <li>AI決策6.6ms：接近人類神經反應極限（~150ms），量級領先</li>
+          <li>高超音速：DF-27A射程覆蓋第二島鏈至關島</li>
+          <li>隱身技術：J-35與F-35C同代競爭，但作戰體系不同</li>
+          <li>系統整合：各型裝備在「體系化作戰」框架下聯動才是關鍵</li>
+        </ul>
+      </div>
+
+      <div class="persp-card">
+        <h4><span class="icon">⚖️</span> 軍控與倫理 <span style="font-weight:400;font-size:13px;color:#999;">Arms Control & Ethics</span></h4>
+        <ul>
+          <li>AI自主作戰武器（LAWS）引發國際人道法爭議</li>
+          <li>高超音速武器飛行時間短、無法預警，影響戰略穩定</li>
+          <li>激光武器尚未有明確國際法律框架約束</li>
+          <li>軍用機器人的責任歸屬問題尚無共識</li>
+          <li>中美軍控對話缺失加劇不確定性</li>
+        </ul>
+      </div>
+
+      <div class="persp-card">
+        <h4><span class="icon">🔮</span> 未來展望 <span style="font-weight:400;font-size:13px;color:#999;">Future Outlook</span></h4>
+        <ul>
+          <li>六代機競賽：J-36/J-50 vs F-47，2028-2030可能是服役窗口</li>
+          <li>核动力航母：Type 004 可能採用核動力+電磁彈射</li>
+          <li>AI軍事化：從輔助決策走向自主作戰的倫理邊界爭論</li>
+          <li>太空軍事化：反衛星、空天飛機等新域作戰能力發展</li>
+          <li>量子技術：量子雷達、量子通訊可能顛覆傳統電子戰</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── SOURCE TABLE ─── -->
+  <div class="section-header">
+    <h2>資訊來源與可信度 <span class="en-sub">Information Sources & Credibility</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="source-section">
+    <div class="source-table-wrap">
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>來源 Source</th>
+            <th>類型 Type</th>
+            <th>主要內容 Content</th>
+            <th>可信度 Credibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>央視 CCTV / 新華社</strong></td>
+            <td>🇨🇳 中國國家媒體</td>
+            <td>J-35 滑躍起飛確認、福建艦戰鬥值班、076型進展</td>
+            <td><span class="cred cred-c">⬤ 中等</span><br><small>官方確認事實，但選擇性報導</small></td>
+          </tr>
+          <tr>
+            <td><strong>觀點 Guandian</strong> (YouTube)</td>
+            <td>📺 評論頻道</td>
+            <td>本次報告主要視頻來源，彙整分析各項突破</td>
+            <td><span class="cred cred-c">⬤ 中等</span><br><small>觀點型內容，需交叉驗證</small></td>
+          </tr>
+          <tr>
+            <td><strong>五角大廈 DoD 年度報告</strong></td>
+            <td>🇺🇸 美國官方</td>
+            <td>中國軍力發展評估、步調挑戰判斷</td>
+            <td><span class="cred cred-b">⬤ 較高</span><br><small>系統性評估，但可能夸大威脅</small></td>
+          </tr>
+          <tr>
+            <td><strong>Janes Defence Weekly</strong></td>
+            <td>🇬🇧 西方防務分析</td>
+            <td>武器系統技術規格、軍力部署分析</td>
+            <td><span class="cred cred-a">⬤ 高</span><br><small>獨立專業分析，長期跟蹤</small></td>
+          </tr>
+          <tr>
+            <td><strong>法國海軍防務</strong><br><em>Naval Defense News</em></td>
+            <td>🇫🇷 專業刊物</td>
+            <td>評價 LY-1 為「世界最強激光武器」</td>
+            <td><span class="cred cred-b">⬤ 較高</span><br><small>專業領域評估</small></td>
+          </tr>
+          <tr>
+            <td><strong>Wikipedia</strong></td>
+            <td>🌐 綜合百科</td>
+            <td>各型裝備基本資料、歷史沿革</td>
+            <td><span class="cred cred-b">⬤ 較高</span><br><small>維基編輯，需查看引用來源</small></td>
+          </tr>
+          <tr>
+            <td><strong>南華早報 SCMP</strong></td>
+            <td>🇭🇰 區域媒體</td>
+            <td>中國軍事科技報導，獨家消息</td>
+            <td><span class="cred cred-b">⬤ 較高</span><br><small>香港媒體，接近中國資訊源</small></td>
+          </tr>
+          <tr>
+            <td><strong>Defense News / Military Watch</strong></td>
+            <td>🌍 國防媒體</td>
+            <td>全球軍事動態追蹤、技術分析</td>
+            <td><span class="cred cred-b">⬤ 較高</span><br><small>專業軍事媒體</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="logo">龍行天下 · DRAGON ROARS</div>
+  <p>基於 YouTube 頻道「觀點」2026-06-19 節目整理 <br>
+  Based on Guandian YouTube channel, episode dated 2026-06-19</p>
+  <p>
+    📺 <a href="https://www.youtube.com/watch?v=f5loeJ5ZJnw" target="_blank" rel="noopener">觀看原始影片 Watch Original Video</a>
+  </p>
+  <p style="margin-top:8px;">報告生成日期：2026-06-21</p>
+  <div class="disclaimer">
+    ⚠️ <strong>免責聲明 Disclaimer:</strong> 本報告由 AI 自動生成，僅供資訊參考，不代表任何官方立場。<br>
+    This report is AI-generated for informational purposes only and does not represent any official position.<br>
+    內容綜合自多個公開來源，具體數據與評估請以官方發布為準。部分技術規格基於公開報導推斷。
+  </div>
+</footer>
+
+</body>
+</html>
